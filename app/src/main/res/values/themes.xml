@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MP1" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.MP1" parent="Base.Theme.MP1" />
+
+    <style name="btnSecondary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_rounded_secondary</item>
+        <item name="android:textColor">@color/primary_dark</item>
+    </style>
+
+    <style name="btnPrimary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_rounded_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+
+</resources>
