@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fifthstreet.databinding.ActivityHomeBinding
 
@@ -12,6 +13,8 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityHomeBinding
     private lateinit var recyclerView: RecyclerView
+    private lateinit var foodList: ArrayList<Food>
+    private lateinit var foodAdapter: FoodAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
 
         init()
 
+        binding.friesBtn.performClick()
         var animator1 : ValueAnimator? = null
         var animator2 : ValueAnimator? = null
         var animator3 : ValueAnimator? = null
@@ -76,6 +80,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        binding.friesBtn.performClick()
     }
 
     private fun createAnimator(textview : TextView): ValueAnimator {
@@ -95,11 +100,31 @@ class HomeActivity : AppCompatActivity() {
         return animator
     }
 
+
+
     private fun init(){
         recyclerView = binding.recyclerView
+        recyclerView.setHasFixedSize(true)
+
+        recyclerView.layoutManager = GridLayoutManager(this,2)
+
+        foodList = ArrayList()
+        addDataToList()
+        foodAdapter = FoodAdapter(foodList)
+        recyclerView.adapter = foodAdapter
+
     }
 
     private fun addDataToList(){
-
+        foodList.add(Food(R.drawable.potatocorner_regular, "Regular", "Php 29.00", "Maliit lol."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
+        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
     }
 }
