@@ -16,6 +16,11 @@ class FoodAdapter(private val foodList: ArrayList<Food>) :
         val foodPrice = itemView.findViewById<TextView>(R.id.tv_FoodPrice)
         val foodDescription = itemView.findViewById<TextView>(R.id.tv_FoodDescription)
     }
+    fun updateData(newData: List<Food>) {
+//        foodList.clear()
+//        foodList.addAll(newData)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.each_item, parent, false)

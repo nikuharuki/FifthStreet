@@ -104,19 +104,35 @@
 
 
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/email_et"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailContainer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:autofillHints="emailAddress"
-            android:background="@drawable/edittext"
+            app:helperText="required"
+            app:helperTextTextColor="#cc0000"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="15dp"
-            android:hint="@string/email"
+            app:boxStrokeWidth="0dp"
+
             android:inputType="textEmailAddress"
-            android:paddingStart="25dp" />
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lines="1"
+                android:drawableStart="@drawable/baseline_person_24"
+                android:background="@drawable/edittext"
+                android:drawablePadding="15dp"
+                android:paddingStart="20dp"
+                android:hint="@string/email"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <EditText
             android:id="@+id/phone_et"

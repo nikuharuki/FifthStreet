@@ -43,6 +43,12 @@ class HomeActivity : AppCompatActivity() {
                     animator1 = createAnimator(binding.tvFries)
                     animator1!!.start()
                     activeAnimator = animator1
+
+                    //clear muna lahat ng laman ng foodlist
+                    foodList.clear()
+                    foodList.addAll(PotatoCorner.getFoodList()) // Get the new data from the food concessionaire class
+                    foodAdapter.updateData(foodList)
+
                 }
 
 
@@ -60,6 +66,11 @@ class HomeActivity : AppCompatActivity() {
                 animator2 = createAnimator(binding.tvWaffle)
                 animator2!!.start()
                 activeAnimator = animator2
+
+                //clear muna lahat ng laman ng foodlist
+                foodList.clear()
+                foodList.addAll(BelgianWaffles.getFoodList()) // Get the new data from the food concessionaire class
+                foodAdapter.updateData(foodList)
             }
 
 
@@ -77,6 +88,12 @@ class HomeActivity : AppCompatActivity() {
                 animator3 = createAnimator(binding.tvCoffee)
                 animator3!!.start()
                 activeAnimator = animator3
+
+                //clear muna lahat ng laman ng foodlist
+                foodList.clear()
+                foodList.addAll(CoffeeBean.getFoodList()) // Get the new data from the food concessionaire class
+                foodAdapter.updateData(foodList)
+
             }
         }
 
@@ -109,22 +126,9 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this,2)
 
         foodList = ArrayList()
-        addDataToList()
+
         foodAdapter = FoodAdapter(foodList)
         recyclerView.adapter = foodAdapter
 
-    }
-
-    private fun addDataToList(){
-        foodList.add(Food(R.drawable.potatocorner_regular, "Regular", "Php 29.00", "Maliit lol."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
-        foodList.add(Food(R.drawable.potatocorner_large, "Large", "Php 55.00", "Malaki xD."))
     }
 }
