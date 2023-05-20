@@ -7,14 +7,20 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+
+
 class FoodAdapter(private val foodList: ArrayList<Food>) :
-    RecyclerView.Adapter<FoodAdapter.FoodViewHolder>(){
+
+
+RecyclerView.Adapter<FoodAdapter.FoodViewHolder>(){
+
+    var onItemClick: ((Food) -> Unit)? = null
 
     class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val foodName: TextView = itemView.findViewById(R.id.tv_FoodName)
-        val foodPrice = itemView.findViewById<TextView>(R.id.tv_FoodPrice)
-        val foodDescription = itemView.findViewById<TextView>(R.id.tv_FoodDescription)
+        val foodPrice: TextView = itemView.findViewById(R.id.tv_FoodPrice)
+        val foodDescription: TextView = itemView.findViewById(R.id.tv_FoodDescription)
     }
     fun updateData(newData: List<Food>) {
 //        foodList.clear()
@@ -35,7 +41,15 @@ class FoodAdapter(private val foodList: ArrayList<Food>) :
         val food = foodList[position]
         holder.imageView.setImageResource(food.image)
         holder.foodName.text = food.name
-        holder.foodPrice.text = food.price
+
+        //"Do not concatenate text displayed with setText. Use resource string with placeholders"
+        val priceText = holder.itemView.context.resources.getString(R.string.food_price_holder, food.price.toString())
+        holder.foodPrice.text = priceText
+
         holder.foodDescription.text = food.description
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(food)
+        }
     }
 }

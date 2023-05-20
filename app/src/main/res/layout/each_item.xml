@@ -67,7 +67,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/gothamrndmedium"
-                android:text="Php 0.00"
+                android:text="@string/peso"
                 android:textColor="@color/primary_dark"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"

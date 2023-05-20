@@ -1,6 +1,7 @@
 package com.example.fifthstreet
 
 import android.animation.ValueAnimator
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -81,7 +82,7 @@ class HomeActivity : AppCompatActivity() {
             if (activeAnimator !== animator3 || animator3 == null) {
                 activeAnimator?.reverse()
 
-                binding.tvCoffee.text = "Starbucks"
+                binding.tvCoffee.text = "Coffee Bean"
                 binding.tvCoffee.visibility = View.VISIBLE
                 binding.tvCoffee.measure(0, 0)
 
@@ -129,6 +130,12 @@ class HomeActivity : AppCompatActivity() {
 
         foodAdapter = FoodAdapter(foodList)
         recyclerView.adapter = foodAdapter
+
+        foodAdapter.onItemClick = {
+            val intent = Intent(this, FoodDetails::class.java)
+            intent.putExtra("Food", it)
+            startActivity(intent)
+        }
 
     }
 }
