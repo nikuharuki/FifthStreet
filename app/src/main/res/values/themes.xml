@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
     <style name="Base.Theme.MP1" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
@@ -16,6 +16,10 @@
     <style name="btnPrimary" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/bg_rounded_primary</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="floatingBtn" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="srcCompat">@drawable/dice</item>
     </style>
 
     <style name="Theme.GridLayout" parent="Theme.MaterialComponents.DayNight.NoActionBar">

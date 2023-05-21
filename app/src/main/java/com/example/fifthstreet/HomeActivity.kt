@@ -1,10 +1,13 @@
 package com.example.fifthstreet
 
 import android.animation.ValueAnimator
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -98,6 +101,38 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        binding.randomizeBtn.setOnClickListener {
+
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.custom_popup)
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+            val foodName = dialog.findViewById<TextView>(R.id.tv_foodName)
+            val foodPrice = dialog.findViewById<TextView>(R.id.tv_foodPrice)
+            val foodConc = dialog.findViewById<TextView>(R.id.tv_foodConcName)
+            val imageView = dialog.findViewById<ImageView>(R.id.imageView)
+            val proceedBtn = dialog.findViewById<Button>(R.id.proceed_btn)
+
+
+                val random = (0 until foodList.size).random()
+                foodName.text = foodList[random].name
+                foodPrice.text = resources.getString(R.string.food_price, foodList[random].price)
+                foodConc.text = foodList[random].concessionaire
+                imageView.setImageResource(foodList[random].image)
+
+            dialog.show()
+
+            proceedBtn.setOnClickListener {
+                val intent = Intent(this, FoodDetails::class.java)
+                intent.putExtra("Food",foodList[random])
+                startActivity(intent)
+                dialog.dismiss()
+            }
+
+
+        }
+
+
         binding.friesBtn.performClick()
     }
 
@@ -138,4 +173,32 @@ class HomeActivity : AppCompatActivity() {
         }
 
     }
+
+    //randomizer
+//    fun randomize(view: View) {
+//        val ra = (0 until foodList.size).random()
+//        val intent = Intent(this@HomeActivity, FoodDetails::class.java)
+//        intent.putExtra("Food", foodList[ra])
+//        startActivity(intent)
+////
+//            val ra = (0 until foodList.size).random()
+//            val selectedFood = foodList[ra]
+//
+//            // Create a dialog with a custom layout
+//            val dialog = Dialog(this@HomeActivity)
+//            dialog.setContentView(R.layout.custom_popup)
+//
+//            // Set up the dialog UI components and data
+////            val foodNameTextView = dialog.findViewById<TextView>(R.id.tv_FoodName)
+////            val closeButton = dialog.findViewById<Button>(R.id.closeButton)
+//
+////            foodNameTextView.text = selectedFood.name
+//
+////            closeButton.setOnClickListener {
+////                dialog.dismiss()
+////            }
+//
+//            // Show the dialog
+//            dialog.show()
+//    }
 }

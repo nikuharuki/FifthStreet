@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:layout_gravity="center"
+
+    android:background="@drawable/popup_background">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="315dp"
+        android:adjustViewBounds="true"
+        android:elevation="6dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/baseline_image_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodConcName"
+        app:layout_constraintVertical_bias="0.339" />
+
+    <TextView
+        android:id="@+id/tv_foodConcName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/gothamrndmedium"
+        android:text="Food Concessionaire"
+        android:textColor="@color/primary_dark"
+
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothamblack"
+        android:text="Food Name"
+        android:textColor="@color/primary_dark"
+
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodConcName" />
+
+    <TextView
+        android:id="@+id/tv_foodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="396dp"
+        android:fontFamily="@font/gothamblack"
+        android:paddingHorizontal="20dp"
+        android:text="Food Price"
+        android:textAlignment="textStart"
+        android:textColor="@color/primary_dark"
+
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/proceed_btn"
+        style="@style/btnPrimary"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/gothamblack"
+        android:letterSpacing=".1"
+        android:text="Proceed"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodPrice" />
+</androidx.constraintlayout.widget.ConstraintLayout>

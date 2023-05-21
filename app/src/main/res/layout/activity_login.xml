@@ -194,7 +194,8 @@
         android:clickable="true"
         android:text="@string/don_t_have_an_account_sign_up"
         android:textColor="#A6BDC5"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:focusable="true" />
 
     </LinearLayout>
 

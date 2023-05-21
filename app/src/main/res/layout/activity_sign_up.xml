@@ -78,44 +78,81 @@
 
             >
 
-            <EditText
-                android:id="@+id/firstname_et"
+<!--            <EditText-->
+<!--                android:id="@+id/firstname_et"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/edittext"-->
+<!--                android:hint="@string/first_name"-->
+<!--                android:inputType="text"-->
+<!--                android:paddingStart="25dp" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/firstNameContainer"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/edittext"
-                android:hint="@string/first_name"
-                android:inputType="text"
-                android:paddingStart="25dp" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+
+                app:helperText=""
+                app:helperTextTextColor="#cc0000"
+                app:hintEnabled="false"
+                app:boxStrokeWidth="0dp"
+                android:inputType="text">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/firstName_et"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/edittext"
+                    android:layout_height="match_parent"
+                    android:hint="First Name"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Space
                 android:layout_width="12dp"
                 android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/lastname_et"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lastNameContainer"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:background="@drawable/edittext"
-                android:hint="@string/last_name"
-                android:inputType="text"
-                android:paddingStart="25dp" />
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:helperText=""
+                app:helperTextTextColor="#cc0000"
+                app:hintEnabled="false"
+                app:boxStrokeWidth="0dp"
+                android:inputType="text">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lastName_et"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/edittext"
+                    android:layout_height="match_parent"
+                    android:hint="Last Name"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="20dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:helperText="required"
+            app:helperText=""
             app:helperTextTextColor="#cc0000"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:drawableStart="@drawable/baseline_person_24"
-            android:drawablePadding="15dp"
             app:boxStrokeWidth="0dp"
-
+            app:hintEnabled="false"
+            android:layout_marginTop="20dp"
             android:inputType="textEmailAddress"
             >
 
@@ -124,11 +161,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:lines="1"
+
                 android:drawableStart="@drawable/baseline_person_24"
                 android:background="@drawable/edittext"
                 android:drawablePadding="15dp"
                 android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:hint="@string/email"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -147,35 +187,69 @@
             android:inputType="phone"
             android:paddingStart="25dp" />
 
-        <EditText
-            android:id="@+id/password_et"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordContainer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:autofillHints="password"
-            android:background="@drawable/edittext"
-            android:drawableStart="@drawable/baseline_lock_24"
+            app:helperText=""
+            app:helperTextTextColor="#cc0000"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="15dp"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingStart="25dp" />
+            app:hintEnabled="false"
+            app:boxStrokeWidth="0dp"
+            app:passwordToggleEnabled="true">
 
-        <EditText
-            android:id="@+id/confirm_password_et"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext"
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawablePadding="15dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirmPassContainer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:autofillHints="password"
-            android:background="@drawable/edittext"
-            android:drawableStart="@drawable/baseline_lock_24"
+            app:helperText=""
+            app:helperTextTextColor="#cc0000"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="15dp"
-            android:hint="@string/confirm_password"
-            android:inputType="textPassword"
-            android:paddingStart="25dp" />
+            app:hintEnabled="false"
+            app:boxStrokeWidth="0dp"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPass_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext"
+                android:drawableStart="@drawable/baseline_lock_24"
+                android:drawablePadding="15dp"
+                android:hint="@string/confirm_password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/splash_sign_up_btn"
+            android:id="@+id/sign_up_btn"
             style="@style/btnPrimary"
             android:layout_width="300dp"
             android:layout_height="60dp"
@@ -188,6 +262,7 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/tv_signIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
