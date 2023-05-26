@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF5ED"
+    android:background="@color/beige_tint"
     tools:context=".HomeActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -43,7 +43,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/gothamblack"
 
-        android:text="Order Your\nFavorite Food"
+        android:text="@string/order_your_favorite_food"
         android:textColor="@color/primary_dark"
         android:textSize="32sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_rounded_primary"
-            android:backgroundTint="#99A98F"
+            android:backgroundTint="@color/washed_green"
             android:clickable="true"
             android:elevation="3dp"
             android:gravity="center"
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-6dp"
             android:background="@drawable/bg_rounded_primary"
-            android:backgroundTint="#025464"
+            android:backgroundTint="@color/dark_teal"
             android:clickable="true"
             android:elevation="4dp"
             android:gravity="center"
@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-6dp"
             android:background="@drawable/bg_rounded_primary"
-            android:backgroundTint="#E57C23"
+            android:backgroundTint="@color/dark_orange"
             android:clickable="true"
             android:elevation="4dp"
             android:gravity="center"
@@ -176,6 +176,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="640dp"
+        android:paddingBottom="25dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />

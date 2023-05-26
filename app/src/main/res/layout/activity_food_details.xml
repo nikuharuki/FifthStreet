@@ -28,8 +28,7 @@
 
             android:fontFamily="@font/gothamrndmedium"
             android:textStyle="bold"
-            android:text="Potato Corner"
-
+            android:text="@string/potato_corner"
             android:textColor="@color/primary_dark"
             android:textSize="28sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +41,8 @@
             android:layout_marginStart="28dp"
             android:layout_marginTop="-10dp"
             android:fontFamily="@font/gothamblack"
-            android:text="Hello!"
+            android:text="@string/hello"
+
             android:textColor="@color/primary_dark"
 
             android:textSize="36sp"
@@ -100,31 +100,32 @@
 
             <TextView
                 android:id="@+id/tv_foodName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
 
                 android:fontFamily="@font/gothamblack"
                 android:paddingStart="20dp"
 
-                android:text="Large"
+                android:text="@string/large"
                 android:textColor="@color/primary_dark"
 
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_foodPrice"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tv_foodPrice"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
+                android:layout_weight="1"
 
                 android:fontFamily="@font/gothamblack"
                 android:paddingHorizontal="20dp"
-                android:text="₱0.00"
+                android:text="@string/zero_cost"
                 android:textAlignment="textStart"
                 android:textColor="@color/primary_dark"
                 android:textSize="32sp"
@@ -140,8 +141,8 @@
             android:layout_marginTop="-2dp"
             android:paddingStart="20dp"
             android:paddingEnd="10dp"
-            android:text="Description"
-            android:textColor="#808080"
+            android:text="@string/desc"
+            android:textColor="@color/grey"
 
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -179,8 +180,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/gothammedium"
-                    android:text="1"
-                    android:textColor="#808080"
+                    android:text="@string/one"
+                    android:textColor="@color/grey"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -204,11 +205,12 @@
 
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buy_btn"
                 android:layout_width="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_height="60dp"
                 android:layout_weight="1.5"
-                android:text="Buy"
+                android:text="@string/buy"
                 android:fontFamily="@font/gothamblack"
                 android:textSize="20sp"
                 android:letterSpacing=".1"

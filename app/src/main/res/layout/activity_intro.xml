@@ -37,24 +37,10 @@
         app:layout_constraintGuide_begin="16dp" />
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
-        android:adjustViewBounds="true"
-        android:elevation="8dp"
-        android:src="@drawable/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/title"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="104dp"
         android:adjustViewBounds="true"
 
         android:elevation="10dp"
@@ -63,6 +49,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/title" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="196dp"
+        android:adjustViewBounds="true"
+        android:elevation="8dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -88,14 +88,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/gothamrndmedium"
-            android:text="Change the game of your school lunch experience — from cafeteria to your classroom!"
+            android:text="@string/splash_subheading"
             android:textSize="16sp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            >
+            android:layout_marginTop="16dp">
 
             <ImageButton
                 android:id="@+id/feast_btn"
@@ -110,10 +109,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="false"
-                android:text="Feast!"
-                android:textSize="24dp"
-                android:textColor="@color/white"
                 android:fontFamily="@font/gothambold"
+                android:text="@string/feast"
+                android:textColor="@color/white"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="@+id/feast_btn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/feast_btn"

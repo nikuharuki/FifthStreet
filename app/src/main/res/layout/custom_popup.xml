@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="350dp"
     android:layout_height="wrap_content"
-    android:padding="15dp"
+    android:padding="25dp"
     android:layout_gravity="center"
 
     android:background="@drawable/popup_background">
@@ -28,11 +28,9 @@
         android:id="@+id/tv_foodConcName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:fontFamily="@font/gothamrndmedium"
-        android:text="Food Concessionaire"
+        android:text="@string/foodconc"
         android:textColor="@color/primary_dark"
-
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gothamblack"
-        android:text="Food Name"
+        android:text="@string/food_name"
         android:textColor="@color/primary_dark"
 
         android:textSize="36sp"
@@ -58,7 +56,7 @@
         android:layout_marginTop="396dp"
         android:fontFamily="@font/gothamblack"
         android:paddingHorizontal="20dp"
-        android:text="Food Price"
+        android:text="@string/food_price_string"
         android:textAlignment="textStart"
         android:textColor="@color/primary_dark"
 
@@ -75,7 +73,7 @@
         android:layout_height="0dp"
         android:fontFamily="@font/gothamblack"
         android:letterSpacing=".1"
-        android:text="Proceed"
+        android:text="@string/proceed"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

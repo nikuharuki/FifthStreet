@@ -97,7 +97,7 @@
 
 
                 app:helperText=""
-                app:helperTextTextColor="#cc0000"
+                app:helperTextTextColor="@color/helper_red"
                 app:hintEnabled="false"
                 app:boxStrokeWidth="0dp"
                 android:inputType="text">
@@ -108,7 +108,7 @@
                     android:layout_width="match_parent"
                     android:background="@drawable/edittext"
                     android:layout_height="match_parent"
-                    android:hint="First Name"
+                    android:hint="@string/first_name"
                     android:paddingStart="25dp"
                     android:paddingEnd="20dp"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -124,7 +124,7 @@
                 android:layout_weight="1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 app:helperText=""
-                app:helperTextTextColor="#cc0000"
+                app:helperTextTextColor="@color/helper_red"
                 app:hintEnabled="false"
                 app:boxStrokeWidth="0dp"
                 android:inputType="text">
@@ -148,7 +148,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:helperText=""
-            app:helperTextTextColor="#cc0000"
+            app:helperTextTextColor="@color/helper_red"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             app:boxStrokeWidth="0dp"
             app:hintEnabled="false"
@@ -193,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:helperText=""
-            app:helperTextTextColor="#cc0000"
+            app:helperTextTextColor="@color/helper_red"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="15dp"
@@ -223,7 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:helperText=""
-            app:helperTextTextColor="#cc0000"
+            app:helperTextTextColor="@color/helper_red"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="15dp"
@@ -267,7 +267,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/already_have_an_account_sign_in"
-            android:textColor="#A6BDC5"
+            android:textColor="@color/washed_blue"
             android:textStyle="bold" />
 
     </LinearLayout>

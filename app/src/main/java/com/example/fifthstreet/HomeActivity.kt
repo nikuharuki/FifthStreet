@@ -40,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
                 if (activeAnimator !== animator1 || animator1 == null) {
                     activeAnimator?.reverse()
 
-                    binding.tvFries.text = "Potato Corner"
+                    binding.tvFries.text = resources.getString(R.string.potato_corner)
                     binding.tvFries.visibility = View.VISIBLE
                     binding.tvFries.measure(0, 0)
 
@@ -63,7 +63,7 @@ class HomeActivity : AppCompatActivity() {
             if (activeAnimator !== animator2 || animator2 == null) {
                 activeAnimator?.reverse()
 
-                binding.tvWaffle.text = "Belgian Waffles"
+                binding.tvWaffle.text = resources.getString(R.string.belgian_waffles)
                 binding.tvWaffle.visibility = View.VISIBLE
                 binding.tvWaffle.measure(0, 0)
 
@@ -85,7 +85,7 @@ class HomeActivity : AppCompatActivity() {
             if (activeAnimator !== animator3 || animator3 == null) {
                 activeAnimator?.reverse()
 
-                binding.tvCoffee.text = "Coffee Bean"
+                binding.tvCoffee.text = resources.getString(R.string.coffee_bean)
                 binding.tvCoffee.visibility = View.VISIBLE
                 binding.tvCoffee.measure(0, 0)
 
@@ -115,9 +115,11 @@ class HomeActivity : AppCompatActivity() {
 
 
                 val random = (0 until foodList.size).random()
-                foodName.text = foodList[random].name
+                //val random = (0 until foodList.size).random()
+
+                foodName.text = this.getString(foodList[random].name)
                 foodPrice.text = resources.getString(R.string.food_price, foodList[random].price)
-                foodConc.text = foodList[random].concessionaire
+                foodConc.text = this.getString(foodList[random].concessionaire)
                 imageView.setImageResource(foodList[random].image)
 
             dialog.show()
@@ -156,14 +158,14 @@ class HomeActivity : AppCompatActivity() {
 
 
     private fun init(){
-        recyclerView = binding.recyclerView
-        recyclerView.setHasFixedSize(true)
+            recyclerView = binding.recyclerView
+            recyclerView.setHasFixedSize(true)
 
         recyclerView.layoutManager = GridLayoutManager(this,2)
 
         foodList = ArrayList()
 
-        foodAdapter = FoodAdapter(foodList)
+        foodAdapter = FoodAdapter(this, foodList)
         recyclerView.adapter = foodAdapter
 
         foodAdapter.onItemClick = {

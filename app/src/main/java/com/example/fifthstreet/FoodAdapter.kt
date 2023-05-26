@@ -1,5 +1,6 @@
 package com.example.fifthstreet
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 
-class FoodAdapter(private val foodList: ArrayList<Food>) :
+class FoodAdapter(private val context: Context, private val foodList: ArrayList<Food>) :
 
 
 RecyclerView.Adapter<FoodAdapter.FoodViewHolder>(){
@@ -40,13 +41,13 @@ RecyclerView.Adapter<FoodAdapter.FoodViewHolder>(){
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         val food = foodList[position]
         holder.imageView.setImageResource(food.image)
-        holder.foodName.text = food.name
+        holder.foodName.text = context.getString(food.name)
 
         //"Do not concatenate text displayed with setText. Use resource string with placeholders"
-        val priceText = holder.itemView.context.resources.getString(R.string.food_price_holder, food.price.toString())
+        val priceText = holder.itemView.context.resources.getString(R.string.food_price, food.price)
         holder.foodPrice.text = priceText
 
-        holder.foodDescription.text = food.description
+        holder.foodDescription.text = context.getString(food.description)
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(food)

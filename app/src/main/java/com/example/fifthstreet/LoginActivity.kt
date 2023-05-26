@@ -30,19 +30,19 @@ class LoginActivity : AppCompatActivity() {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
 
-                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
 
                 startActivity(intent)
                 //finish()
 
             }else{
                 if (binding.emailEt.text.toString().isBlank()){
-                    binding.emailContainer.helperText = "Required"
+                    binding.emailContainer.helperText = getString(R.string.required)
                 }
                 if (binding.passwordEt.text.toString().isBlank()){
-                    binding.passwordContainer.helperText = "Required"
+                    binding.passwordContainer.helperText = getString(R.string.required)
                 }
-                Toast.makeText(this, "Invalid login credentials", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.invalid_login), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
 //            return "Required"
 //        }
         if (!email.endsWith("@iacademy.edu.ph")){
-            return "Use iAcademy Email"
+            return getString(R.string.use_iacademy_email)
         }
     return null
     }
@@ -98,16 +98,16 @@ class LoginActivity : AppCompatActivity() {
 //            return "Required"
 //        }
         if (password.length < 8){
-            return "Minimum 8 Character Password"
+            return getString(R.string.minimum_8_character_password)
         }
         if (!password.contains(Regex("[0-9]"))){
-            return "Password must contain a number"
+            return getString(R.string.password_must_contain_a_number)
         }
         if (!password.contains(Regex("[A-Z]"))){
-            return "Password must contain a capital letter"
+            return getString(R.string.password_must_contain_a_capital_letter)
         }
         if (!password.contains(Regex("[a-z]"))){
-            return "Password must contain a small letter"
+            return getString(R.string.password_must_contain_a_small_letter)
         }
         return null
     }

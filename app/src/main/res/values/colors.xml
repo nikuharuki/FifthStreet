@@ -3,9 +3,23 @@
     <color name="black">#FF000000</color>
     <color name="white">#ffffff</color>
     <color name="off_white">#F5F5F5</color>
+    <color name="grey">#808080</color>
+
+    <color name="beige_tint">#FAF5ED</color>
+    <color name="beiger_tint">#f6ebda</color>
+    <color name="washed_green">#99A98F</color>
+    <color name="dark_teal">#025464</color>
+    <color name="dark_orange">#E57C23</color>
+
+
 
     <color name="cosmic_latte">#fff6ea</color>
     <color name="primary_dark">#292B3B</color>
     <color name="mustard">#ffbd59</color>
     <color name="gray_washed">#F6F6F6</color>
+
+    <color name="helper_red">#cc0000</color>
+    <color name="washed_blue">#A6BDC5</color>
+
+
 </resources>
